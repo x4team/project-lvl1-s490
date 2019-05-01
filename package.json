@@ -1,0 +1,25 @@
+{
+  "name": "brain-games",
+  "version": "1.0.0",
+  "description": "",
+  "main": "brain-games.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x4team/project-lvl1-s490.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/cli": "^7.4.4",
+    "@babel/node": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+   },
+  "bugs": {
+    "url": "https://github.com/x4team/project-lvl1-s490/issues"
+  },
+  "homepage": "https://github.com/x4team/project-lvl1-s490#readme"
+}
