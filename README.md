@@ -7,7 +7,7 @@
 -----------------------------------
 Install "brain-games-dmitry-x4team" with NPM: 
 -----------------------------------
-https://asciinema.org/a/KBuYw8kMSfymqCaHZSSp1OLs6
+https://asciinema.org/a/rm61l3sS3bvEdrsCDuG2wg1FQ
 
 ░░█░░░░░░░░░░░░░░░░░░█░░
 ░██░█░░░░░░░░░░░░░░█░██░
