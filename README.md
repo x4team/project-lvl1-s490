@@ -7,7 +7,13 @@
 -----------------------------------
 Install "brain-games-dmitry-x4team" with NPM: 
 -----------------------------------
-https://asciinema.org/a/rm61l3sS3bvEdrsCDuG2wg1FQ
+https://asciinema.org/a/Kc3PDOWEwuCtOT0oRg30ENr3M
+/**********************************/
+Launch Games:
+$brain-even https://asciinema.org/a/hrKUjFtGH2AVQbkiqiqzzufL9
+$brain-calc https://asciinema.org/a/amepB8t2zE6qC8PaqwhQhQT0o
+$brain-gcd https://asciinema.org/a/h4CvHWrjDrgPJeYvoujkxAF1M
+/**********************************/
 
 ░░█░░░░░░░░░░░░░░░░░░█░░
 ░██░█░░░░░░░░░░░░░░█░██░
