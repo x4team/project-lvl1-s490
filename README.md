@@ -18,3 +18,5 @@ https://asciinema.org/a/Kc3PDOWEwuCtOT0oRg30ENr3M
 `$brain-gcd` https://asciinema.org/a/h4CvHWrjDrgPJeYvoujkxAF1M
 
 `&brain-progression` https://asciinema.org/a/XNW9IRdOp5M5PaMv7DhNiZqBD
+
+`$brain-prime` https://asciinema.org/a/KP263vQfxK1OreGZg887jtEHv

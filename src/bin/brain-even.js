@@ -22,9 +22,9 @@ for(let counter = 3; counter > 0; counter--) {
 	let number = getRandomInt(1, 100);
 	console.log('\nQuestion: ' + number);
 	let answer = userAnswer('Your answer: ');
-	if(answer==parityCheck(number)){
+	if(answer == parityCheck(number)){
 		console.log('\nCorrect!');
-			if(counter==1) {
+			if(counter == 1) {
 	                       console.log(`\nCongratulations, ${userName}!`);
 			}
 	}  else {
