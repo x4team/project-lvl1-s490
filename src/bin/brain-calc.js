@@ -1,16 +1,16 @@
 #!/bin/node
 import userAnswer from '..';
 
-console.log('Welcome to the Brain Games!\nWhat is the result of the expression?');
+console.log('\nWelcome to the Brain Games!\nWhat is the result of the expression?\n');
 const userName = userAnswer('May I have your name? ');
 
-console.log(`Hello, ${userName}!`);
+console.log(`Hello, ${userName}!\n`);
 
-function getRandomInt(min, max){
+const getRandomInt = function(min, max){
 	return Math.floor(Math.random() *  (max - min +1)) + min;
-}
+};
 
-function getMathOperation(number) {
+const getMathOperation = function(number) {
 	if(number == 1) {
 	return '+';
 	} else if(number == 2) {
@@ -18,16 +18,16 @@ function getMathOperation(number) {
 	} else if(number == 3) {
 	return '*';
 	}
-}
+};
 
-function Calculation(number_one, number_two, operation) {
+const Calculation = function(number_one, number_two, operation) {
 	if(operation == '+') {
-		return number_one + number_two;	
+		return number_one + number_two;
 	} else if(operation == '-') {
 		return number_one - number_two;
 	} else if(operation == '*') {
 		return number_one * number_two;
-	}	
+	}
 }
 
 for(let counter = 3; counter > 0; counter--) {
@@ -38,12 +38,12 @@ for(let counter = 3; counter > 0; counter--) {
 	console.log(`Question:  ${number_one} ${operation} ${number_two}`);
 	let answer = userAnswer('Your answer: ');
 	if(answer==total){
-		console.log('Correct!');
+		console.log('\nCorrect!');
 			if(counter==1) {
-	                       console.log(`Congratulations, ${userName}!`);
+	                       console.log(`\nCongratulations, ${userName}!`);
 			}
 	}  else {
-	console.log(`'${answer}' is wrong answer ;(. Correct answer was '${total}'.\n Let's try again, ${userName}!`);
+	console.log(`\n'${answer}' is wrong answer ;(. Correct answer was '${total}'.\n Let's try again, ${userName}!`);
 		break;
 	}
 }

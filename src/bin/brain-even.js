@@ -1,34 +1,34 @@
 #!/bin/node
 import userAnswer from '..';
 
-console.log('Welcome to the Brain Games!\nAnswer \"yes\" if number even otherwise answer \"no\".');
-const userName = userAnswer('May I have your name? ');
+console.log('\nWelcome to the Brain Games!\nAnswer \"yes\" if number even otherwise answer \"no\".');
+const userName = userAnswer('\nMay I have your name? ');
 
-console.log(`Hello, ${userName}!`);
+console.log(`\nHello, ${userName}!`);
 
-function getRandomInt(min, max){
+const getRandomInt = function(min, max){
 	return Math.floor(Math.random() *  (max - min +1)) + min;
-}
+};
 
-function parityCheck(number){
+const parityCheck = function(number){
 	if(number%2==0) {
 		return 'yes';
 	}  else {
 		return 'no';
 	}
-}
+};
 
 for(let counter = 3; counter > 0; counter--) {
 	let number = getRandomInt(1, 100);
-	console.log('Question: ' + number);
+	console.log('\nQuestion: ' + number);
 	let answer = userAnswer('Your answer: ');
 	if(answer==parityCheck(number)){
-		console.log('Correct!');
+		console.log('\nCorrect!');
 			if(counter==1) {
-	                       console.log(`Congratulations, ${userName}!`);
+	                       console.log(`\nCongratulations, ${userName}!`);
 			}
 	}  else {
-	console.log(`'${answer}' is wrong answer ;(. Correct answer was '${parityCheck(number)}'.\n Let's try again, ${userName}!`);
+	console.log(`\n'${answer}' is wrong answer ;(. Correct answer was '${parityCheck(number)}'.\n Let's try again, ${userName}!`);
 		break;
 	}
 }
