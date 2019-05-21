@@ -1,7 +1,5 @@
-#!/bin/node
-import userName from '..';
+#!/usr/bin/env node
 
-console.log('\nWelcome to the Brain Games!\nAnswer \"yes\" if number even otherwise answer \"no\".');
-const answer = userName('\nMay I have your name? ');
+import startGames from '../games/games';
 
-console.log(`\nHello, ${answer}!`);
+startGames();

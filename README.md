@@ -1,8 +1,8 @@
 # project-lvl1-s490
 Для hexlet.io
 -------
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
-[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+<a href="https://codeclimate.com/github/x4team/project-lvl1-s490/test_coverage"><img src="https://api.codeclimate.com/v1/badges/8ae37fc929e12aadbb1a/test_coverage" /></a>
+[![Build Status](https://travis-ci.org/x4team/project-lvl1-s490.svg?branch=master)](https://travis-ci.org/x4team/project-lvl1-s490)
 
 -----------------------------------
 Install "brain-games-dmitry-x4team" with NPM: 
