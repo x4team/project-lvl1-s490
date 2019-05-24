@@ -11,11 +11,11 @@ const startGames = () => {
   console.log(`\nHello, ${userName}!`);
   console.log('\nWelcome to the Brain Games!');
   console.log('\nPlease select the game you want:'
-	    + '\n1) brain-calc'
-            + '\n2) brain-even'
-	    + '\n3) brain-gcd'
-	    + '\n4) brain-prime'
-	    + '\n5) brain-progression');
+   + '\n1) brain-calc'
+   + '\n2) brain-even'
+   + '\n3) brain-gcd'
+   + '\n4) brain-prime'
+   + '\n5) brain-progression');
   const userGameAnswer = userAnswer('\nENTER the answer number: ');
 
   const selectGames = (userGame) => {

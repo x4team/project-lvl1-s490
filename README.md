@@ -1,7 +1,7 @@
 # project-lvl1-s490
 Для hexlet.io
 -------
-<a href="https://codeclimate.com/github/x4team/project-lvl1-s490/test_coverage"><img src="https://api.codeclimate.com/v1/badges/8ae37fc929e12aadbb1a/test_coverage" /></a>
+<a href="https://codeclimate.com/github/x4team/project-lvl1-s490/maintainability"><img src="https://api.codeclimate.com/v1/badges/8ae37fc929e12aadbb1a/maintainability" /></a>
 [![Build Status](https://travis-ci.org/x4team/project-lvl1-s490.svg?branch=master)](https://travis-ci.org/x4team/project-lvl1-s490)
 
 -----------------------------------
