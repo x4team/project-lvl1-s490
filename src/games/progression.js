@@ -1,52 +1,37 @@
-import userAnswer from '..';
+import isItRight from '../additional/isitright';
+import getRandomInt from '../additional/getrandomint';
 
-const startProgression = () => {
+const startProgression = (userName) => {
   console.log(
     '\nBrain-progression: What number is missing in the progression?',
   );
+  const genProgression = (array) => {
+    const progressionStep = getRandomInt(8, 20);
+    const progressionLength = 10;
+    const indexLocationNumber = getRandomInt(1, 9);
 
-  const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-  const getRandomProgression = (num, arr) => {
-    const arrClone = arr.slice();
-    for (let counter = 10; counter > 0; counter -= 1) {
-      arrClone[arrClone.length] = num + arrClone[arrClone.length - 1];
-    // Or arrClone.push(num + arrClone[arrClone.length - 1]);
-    }
-    return arrClone;
-  };
-
-  const getChangeArr = (arr, startIndex) => {
-    const itemsToReplace = 1;
-    const replaceTo = '..';
-    const arrClone = arr.slice();
-    arrClone.splice(startIndex, itemsToReplace, replaceTo);
-    return arrClone.join(' ');
-  };
-
-  for (let counter = 3; counter > 0; counter -= 1) {
-    const progressionStep = getRandomInt(1, 20);
-    const startNumber = getRandomInt(1, 20);
-    const startIndex = getRandomInt(1, 9);
-    const array = [startNumber];
-    const arrayProgression = getRandomProgression(progressionStep, array.slice());
-    const string = getChangeArr(arrayProgression.slice(), startIndex);
-    console.log(`\nQuestion: ${string}`);
-    const answer = userAnswer('Your answer: ');
-    if (answer === arrayProgression[startIndex]) {
-      console.log('\nCorrect!');
-      if (counter === 1) {
-        console.log(`\nCongratulations, ${userName}!`);
+    const progression = [array[0]];
+    const qHeadElements = indexLocationNumber - 1;
+    const qTailElements = progressionLength - indexLocationNumber;
+    const genHead = () => {
+      for (let i = qHeadElements; i >= 1; i -= 1) {
+        progression.unshift(progression[0] - progressionStep);
       }
-    } else {
-      console.log(
-        `\n'${answer}' is wrong answer ;(. Correct answer was '${
-          arrayProgression[startIndex]
-        }'.\n Let's try again, ${userName}!`,
-      );
-      break;
-    }
-  }
+    };
+    const genTail = () => {
+      for (let i = qTailElements; i >= 1; i -= 1) {
+        progression.push(progression[progression.length - 1] + progressionStep);
+      }
+    };
+    genHead();
+    genTail();
+    progression.splice(indexLocationNumber - 1, 1, '.. ');
+    return progression.join(', ');
+  };
+  const funcExpected = arg => arg;
+  const counter = 3;
+  const qNumber = 1;
+  return isItRight(userName, funcExpected, genProgression, qNumber, counter);
 };
 
 export default startProgression;

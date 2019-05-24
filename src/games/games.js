@@ -7,19 +7,19 @@ import startPrime from './prime';
 import startProgression from './progression';
 
 const startGames = () => {
-  console.log('\nWelcome to the Brain Games!');
   const userName = getUserName;
-  console.log(`\nHello, ${userName}`);
+  console.log(`\nHello, ${userName}!`);
+  console.log('\nWelcome to the Brain Games!');
   console.log('\nPlease select the game you want:'
 	    + '\n1) brain-calc'
             + '\n2) brain-even'
 	    + '\n3) brain-gcd'
 	    + '\n4) brain-prime'
 	    + '\n5) brain-progression');
-  const userGameAnswer = userAnswer('\nENTER the answer number:');
-  const listGames = ['1', '2', '3', '4', '5'];
+  const userGameAnswer = userAnswer('\nENTER the answer number: ');
+
   const selectGames = (userGame) => {
-    switch (listGames[userGame]) {
+    switch (userGame) {
       case '1':
         startCalc(userName);
         break;
