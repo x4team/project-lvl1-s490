@@ -1,4 +1,5 @@
-import isItRight from '../additional/isitright';
+import { makeGame, iter } from '..';  
+import getRandomInt from '../utils'; 
 
 const startGCD = (userName) => {
   console.log(
@@ -16,7 +17,7 @@ const startGCD = (userName) => {
   const counter = 3;
   const qNumber = 2;
   const question = arg => `${arg.join(', ')}`;
-  return isItRight(userName, getGCD, question, qNumber, counter);
+  return makeGame(userName, getGCD, question, qNumber, counter);
 };
 
 export default startGCD;

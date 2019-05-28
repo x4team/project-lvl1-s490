@@ -1,4 +1,5 @@
-import isItRight from '../additional/isitright';
+import { makeGame, iter } from '..';  
+import getRandomInt from '../utils'; 
 
 const startCalc = (userName) => {
   console.log('\nBrain-calc: What is the result of the expression?\n');
@@ -30,7 +31,7 @@ const startCalc = (userName) => {
   const counter = 3;
   const qNumber = 3;
   const question = array => `${array[0]} ${getMathOperation(array[1])} ${array[2]}`;
-  return isItRight(userName, total, question, qNumber, counter);
+  return makeGame(userName, total, question, qNumber, counter);
 };
 
 export default startCalc;

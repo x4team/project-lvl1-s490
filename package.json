@@ -24,7 +24,13 @@
   },
   "author": "Dmitry Rakov",
   "license": "ISC",
-  "keywords": "brain, games, brain-games, x4team, dmitry",
+  "keywords": [
+    "brain", 
+    "games", 
+    "brain-games", 
+    "x4team", 
+    "dmitry"
+  ],	
   "bugs": {
     "url": "https://github.com/x4team/project-lvl1-s490/issues"
   },

@@ -1,5 +1,5 @@
-import isItRight from '../additional/isitright';
-import getRandomInt from '../additional/getrandomint';
+import { makeGame, iter } from '..';  
+import getRandomInt from '../utils'; 
 
 const startProgression = (userName) => {
   console.log(
@@ -31,7 +31,7 @@ const startProgression = (userName) => {
   const funcExpected = arg => arg;
   const counter = 3;
   const qNumber = 1;
-  return isItRight(userName, funcExpected, genProgression, qNumber, counter);
+  return makeGame(userName, funcExpected, genProgression, qNumber, counter);
 };
 
 export default startProgression;

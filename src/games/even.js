@@ -1,20 +1,15 @@
-import isItRight from '../additional/isitright';
+import { makeGame, iter } from '..';
+import getRandomInt from '../utils';
 
-const startEven = (userName) => {
-  console.log(
-    '\nBrain-even: Answer "yes" if number even otherwise answer "no".',
-  );
-
-  const parityCheck = (number) => {
-    if (number % 2 === 0) {
-      return 'yes';
-    }
-    return 'no';
-  };
-  const counter = 3;
-  const qNumber = 1;
-  const question = arg => `${arg}`;
-  return isItRight(userName, parityCheck, question, qNumber, counter);
+const generateEvenData = () => {
+  const gameRules = '\nBrain-even: Answer "yes" if number even otherwise answer "no".';
+  const number = getRandomInt(1, 100);
+  const isEven = num => num % 2 === 0;
+  const answer = isEven(number) ? 'yes' : 'no';
+  const question = `${number}`;
+  const gameData = [gameRules, answer, question];
+  return gameData;
 };
+const startEven = () => makeGame(generateEvenData, iter);
 
 export default startEven;

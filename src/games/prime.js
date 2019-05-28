@@ -1,4 +1,5 @@
-import isItRight from '../additional/isitright';
+import { makeGame, iter } from '..';  
+import getRandomInt from '../utils'; 
 
 const startPrime = (userName) => {
   console.log(
@@ -15,7 +16,7 @@ const startPrime = (userName) => {
   const counter = 3;
   const qNumber = 1;
   const question = arg => `${arg}`;
-  return isItRight(userName, isPrime, question, qNumber, counter);
+  return makeGame(userName, isPrime, question, qNumber, counter);
 };
 
 export default startPrime;
