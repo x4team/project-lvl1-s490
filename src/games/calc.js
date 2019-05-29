@@ -1,37 +1,29 @@
-import { makeGame, iter } from '..';  
-import getRandomInt from '../utils'; 
+import { makeGame, iter } from '..';
+import getRandomInt from '../utils';
 
-const startCalc = (userName) => {
-  console.log('\nBrain-calc: What is the result of the expression?\n');
+const genCalcData = () => {
+  const gameRules = '\nBrain-calc: What is the result of the expression?\n';
 
-  const getMathOperation = (number) => {
-    if (number % 2 === 0) {
-      return '+';
-    } if (number % 2 !== 0) {
-      if (number % 3 === 0) {
-        return '-';
-      } if (!Number.isNaN(number) && number % 5 === 0) {
-        return '*';
-      }
+  const getQuestionAndAnswer = (num1, num2) => {
+    switch (getRandomInt(1, 3)) {
+      case 1:
+        return [`${num1} - ${num2}`, num1 - num2];
+      case 2:
+        return [`${num1} + ${num2}`, num1 + num2];
+      case 3:
+        return [`${num1} * ${num2}`, num1 * num2];
+      default:
+        return 'Error: The function received invalid arguments.';
     }
-    return '-';
   };
-
-  const calculation = (numberOne, numberTwo, operation) => {
-    if (operation === '+') {
-      return numberOne + numberTwo;
-    } if (operation === '-') {
-      return numberOne - numberTwo;
-    } if (operation === '*') {
-      return numberOne * numberTwo;
-    }
-    return 'No operation found or error passing function arguments';
-  };
-  const total = (num1, operation, num2) => calculation(num1, num2, getMathOperation(operation));
-  const counter = 3;
-  const qNumber = 3;
-  const question = array => `${array[0]} ${getMathOperation(array[1])} ${array[2]}`;
-  return makeGame(userName, total, question, qNumber, counter);
+  const numberOne = getRandomInt(1, 100);
+  const numberTwo = getRandomInt(1, 100);
+  const array = getQuestionAndAnswer(numberOne, numberTwo);
+  const question = array[0];
+  const answer = `${array[1]}`;
+  const gameData = [gameRules, answer, question];
+  return gameData;
 };
+const startCalc = () => makeGame(genCalcData, iter);
 
 export default startCalc;

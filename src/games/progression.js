@@ -1,10 +1,8 @@
-import { makeGame, iter } from '..';  
-import getRandomInt from '../utils'; 
+import { makeGame, iter } from '..';
+import getRandomInt from '../utils';
 
-const startProgression = (userName) => {
-  console.log(
-    '\nBrain-progression: What number is missing in the progression?',
-  );
+const genProgressionData = () => {
+  const gameRules = '\nBrain-progression: What number is missing in the progression?';
   const genProgression = (array) => {
     const progressionStep = getRandomInt(8, 20);
     const progressionLength = 10;
@@ -28,10 +26,13 @@ const startProgression = (userName) => {
     progression.splice(indexLocationNumber - 1, 1, '.. ');
     return progression.join(', ');
   };
-  const funcExpected = arg => arg;
-  const counter = 3;
-  const qNumber = 1;
-  return makeGame(userName, funcExpected, genProgression, qNumber, counter);
+  const number = getRandomInt(1, 100);
+  const answer = `${number}`;
+  const question = genProgression([number]);
+  const gameData = [gameRules, answer, question];
+  return gameData;
 };
+
+const startProgression = () => makeGame(genProgressionData, iter);
 
 export default startProgression;
