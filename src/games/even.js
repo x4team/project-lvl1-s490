@@ -1,15 +1,15 @@
-import { makeGame, iter } from '..';
+import { makeGame } from '..';
 import getRandomInt from '../utils';
 
+const gameDescription = 'Brain-even: Answer "yes" if number even otherwise answer "no".';
+const isEven = num => num % 2 === 0;
+
 const genEvenData = () => {
-  const gameRules = '\nBrain-even: Answer "yes" if number even otherwise answer "no".';
   const number = getRandomInt(1, 100);
-  const isEven = num => num % 2 === 0;
   const answer = isEven(number) ? 'yes' : 'no';
-  const question = `${number}`;
-  const gameData = [gameRules, answer, question];
+  const question = String(number);
+  const gameData = [gameDescription, answer, question];
   return gameData;
 };
-const startEven = () => makeGame(genEvenData, iter);
-
+const startEven = () => makeGame(genEvenData, gameDescription);
 export default startEven;
