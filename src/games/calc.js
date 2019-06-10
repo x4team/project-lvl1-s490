@@ -1,4 +1,4 @@
-import { makeGame, iter } from '..';
+import makeGame from '..';
 import getRandomInt from '../utils';
 
 const genCalcData = () => {
@@ -13,7 +13,7 @@ const genCalcData = () => {
       case 3:
         return [`${num1} * ${num2}`, num1 * num2];
       default:
-        return 'Error: The function received invalid arguments.';
+        return '';
     }
   };
   const numberOne = getRandomInt(1, 100);
@@ -24,6 +24,6 @@ const genCalcData = () => {
   const gameData = [gameRules, answer, question];
   return gameData;
 };
-const startCalc = () => makeGame(genCalcData, iter);
+const startCalc = () => makeGame(genCalcData);
 
 export default startCalc;

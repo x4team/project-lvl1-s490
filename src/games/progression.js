@@ -1,4 +1,4 @@
-import { makeGame, iter } from '..';
+import { makeGame, iterations } from '..';
 import getRandomInt from '../utils';
 
 const genProgressionData = () => {
@@ -33,6 +33,6 @@ const genProgressionData = () => {
   return gameData;
 };
 
-const startProgression = () => makeGame(genProgressionData, iter);
+const startProgression = () => makeGame(genProgressionData, iterations);
 
 export default startProgression;

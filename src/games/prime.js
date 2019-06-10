@@ -1,4 +1,4 @@
-import { makeGame, iter } from '..';
+import { makeGame, iterations } from '..';
 import getRandomInt from '../utils';
 
 const genPrimeData = () => {
@@ -16,6 +16,6 @@ const genPrimeData = () => {
   return gameData;
 };
 
-const startPrime = () => makeGame(genPrimeData, iter);
+const startPrime = () => makeGame(genPrimeData, iterations);
 
 export default startPrime;

@@ -1,4 +1,4 @@
-import { makeGame, iter } from '..';
+import { makeGame, iterations } from '..';
 import getRandomInt from '../utils';
 
 const genGCDData = () => {
@@ -20,6 +20,6 @@ const genGCDData = () => {
   return gameData;
 };
 
-const startGCD = () => makeGame(genGCDData, iter);
+const startGCD = () => makeGame(genGCDData, iterations);
 
 export default startGCD;
