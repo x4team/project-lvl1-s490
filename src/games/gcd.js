@@ -1,25 +1,22 @@
-import { makeGame, iterations } from '..';
+import makeGame from '..';
 import getRandomInt from '../utils';
+
+const getGCD = (a, b) => {
+  if (!b) {
+    return a;
+  }
+  return getGCD(b, a % b);
+};
 
 const genGCDData = () => {
   const gameRules = '\nBrain-gcd: Find the greatest common divisor of given numbers.';
-
-  const getGCD = (a, b) => {
-    for (let counter = a; counter >= 1; counter -= 1) {
-      if (a % counter === 0 && b % counter === 0) {
-        return counter;
-      }
-    }
-    return '1';
-  };
   const numberOne = getRandomInt(1, 100);
   const numberTwo = getRandomInt(1, 100);
   const answer = `${getGCD(numberOne, numberTwo)}`;
   const question = `${numberOne} ${numberTwo}`;
-  const gameData = [gameRules, answer, question];
-  return gameData;
+  return [gameRules, answer, question];
 };
 
-const startGCD = () => makeGame(genGCDData, iterations);
+const startGCD = () => makeGame(genGCDData);
 
 export default startGCD;
