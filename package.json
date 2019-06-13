@@ -1,6 +1,6 @@
 {
   "name": "brain-games-dmitry-x4team",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "for hexlet projects",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
@@ -25,12 +25,12 @@
   "author": "Dmitry Rakov",
   "license": "ISC",
   "keywords": [
-    "brain", 
-    "games", 
-    "brain-games", 
-    "x4team", 
+    "brain",
+    "games",
+    "brain-games",
+    "x4team",
     "dmitry"
-  ],	
+  ],
   "bugs": {
     "url": "https://github.com/x4team/project-lvl1-s490/issues"
   },
