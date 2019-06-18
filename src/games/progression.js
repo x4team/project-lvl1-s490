@@ -2,27 +2,30 @@ import makeGame from '..';
 import getRandomInt from '../utils';
 
 const genProgression = (start, length, step, index) => {
-  const arr = [start];
-  for (let counter = length; counter >= 1; counter -= 1) {
-    arr.push(arr[arr.length - 1] + step);
+  let arr = [];
+  for (let counter = 0; counter <= length; counter += 1) {
+    if (counter === index) {
+      arr = arr.concat(['..']);
+    } else {
+      arr = arr.concat([start + step * counter]);
+    }
   }
-  arr.splice(index, 1, '.. ');
   return arr;
 };
+const gameDescription = '\nBrain-progression: What number is missing in the progression?';
+const length = 10;
 
 const genProgressionData = () => {
   const startElement = getRandomInt(1, 100);
-  const lengthProgression = 10;
   const stepProgression = getRandomInt(1, 20);
-  const indexHidden = getRandomInt(0, 9);
-  const progression = genProgression(startElement, lengthProgression, stepProgression, indexHidden);
+  const hiddenElementIndex = getRandomInt(1, length);
+  const progression = genProgression(startElement, length, stepProgression, hiddenElementIndex);
 
-  const gameRules = '\nBrain-progression: What number is missing in the progression?';
-  const answer = String(startElement + stepProgression * indexHidden);
-  const question = progression.join(', ');
-  return [gameRules, answer, question];
+  const answer = String(startElement + stepProgression * hiddenElementIndex);
+  const question = progression.join(' ');
+  return [answer, question];
 };
 
-const startProgression = () => makeGame(genProgressionData);
+const startProgression = () => makeGame(genProgressionData, gameDescription);
 
 export default startProgression;

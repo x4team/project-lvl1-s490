@@ -8,15 +8,15 @@ const isPrime = (num) => {
   }
   return true;
 };
+const gameDescription = '\nBrain-prime: Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const genPrimeData = () => {
-  const gameRules = '\nBrain-prime: Answer "yes" if given number is prime. Otherwise answer "no"';
   const number = getRandomInt(2, 100);
   const answer = isPrime(number) ? 'yes' : 'no';
   const question = `${number}`;
-  return [gameRules, answer, question];
+  return [answer, question];
 };
 
-const startPrime = () => makeGame(genPrimeData);
+const startPrime = () => makeGame(genPrimeData, gameDescription);
 
 export default startPrime;
