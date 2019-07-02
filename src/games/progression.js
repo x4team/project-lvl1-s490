@@ -12,13 +12,13 @@ const genProgression = (start, length, step, index) => {
   }
   return arr;
 };
-const gameDescription = '\nBrain-progression: What number is missing in the progression?';
+const gameDescription = 'Brain-progression: What number is missing in the progression?';
 const length = 10;
 
 const genProgressionData = () => {
   const startElement = getRandomInt(1, 100);
   const stepProgression = getRandomInt(1, 20);
-  const hiddenElementIndex = getRandomInt(1, length);
+  const hiddenElementIndex = getRandomInt(0, length);
   const progression = genProgression(startElement, length, stepProgression, hiddenElementIndex);
 
   const answer = String(startElement + stepProgression * hiddenElementIndex);
@@ -26,6 +26,4 @@ const genProgressionData = () => {
   return [answer, question];
 };
 
-const startProgression = () => makeGame(genProgressionData, gameDescription);
-
-export default startProgression;
+export default () => makeGame(genProgressionData, gameDescription);

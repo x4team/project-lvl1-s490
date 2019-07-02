@@ -13,7 +13,7 @@ const getQuestionAndAnswer = (num1, num2) => {
       return '';
   }
 };
-const gameDescription = '\nBrain-calc: What is the result of the expression?\n';
+const gameDescription = 'Brain-calc: What is the result of the expression?';
 
 const genCalcData = () => {
   const numberOne = getRandomInt(1, 100);
@@ -23,6 +23,4 @@ const genCalcData = () => {
   const answer = `${array[1]}`;
   return [answer, question];
 };
-const startCalc = () => makeGame(genCalcData, gameDescription);
-
-export default startCalc;
+export default () => makeGame(genCalcData, gameDescription);

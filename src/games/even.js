@@ -11,6 +11,4 @@ const genEvenData = () => {
   return [answer, question];
 };
 
-const startEven = () => makeGame(genEvenData, gameDescription);
-
-export default startEven;
+export default () => makeGame(genEvenData, gameDescription);

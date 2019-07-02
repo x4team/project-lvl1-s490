@@ -1,7 +1,7 @@
 import makeGame from '..';
 import getRandomInt from '../utils';
 
-const gameDescription = '\nBrain-prime: Answer "yes" if given number is prime. Otherwise answer "no"';
+const gameDescription = 'Brain-prime: Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const isPrime = (num) => {
   if (num <= 1) return false;
@@ -18,6 +18,4 @@ const genPrimeData = () => {
   return [answer, question];
 };
 
-const startPrime = () => makeGame(genPrimeData, gameDescription);
-
-export default startPrime;
+export default () => makeGame(genPrimeData, gameDescription);
