@@ -6,32 +6,30 @@ const makeGame = (gameDataFunc, description) => {
   console.log('\nWelcome to the Brain Games!');
   const userName = readlineSync.question('\nMay I have your name? ');
   console.log(`\nHello, ${userName}!`);
-
+  console.log(`\n${description}`);
   const game = (gameFunc, counter) => {
     if (counter === 0) {
-      console.log(`\nCongratulations, ${userName}!`);
+      return true;
     }
-    if (counter !== 0) {
-      const gameData = gameFunc();
-      const [expected, question] = gameData;
+    const gameData = gameFunc();
+    const [expected, question] = gameData;
 
-      if (counter === numberOfRounds) {
-        console.log(`\n${description}`);
-      }
-      console.log(`\nQuestion: ${question}`);
-      const userAnswer = readlineSync.question('You answer: ');
+    console.log(`\nQuestion: ${question}`);
+    const userAnswer = readlineSync.question('You answer: ');
 
-      if (userAnswer === expected) {
-        console.log('\nCorrect!');
-        game(gameFunc, counter - 1);
-      } else {
-        console.log(`\n'${userAnswer}' is wrong answer ;(`
+    if (userAnswer === expected) {
+      console.log('\nCorrect!');
+      return game(gameFunc, counter - 1);
+    }
+    console.log(`\n'${userAnswer}' is wrong answer ;(`
         + ` Correct answer was '${expected}'`);
-        console.log(`Let's try again, ${userName}!\n`);
-      }
-    }
+    return false;
   };
-
-  game(gameDataFunc, numberOfRounds);
+  const result = game(gameDataFunc, numberOfRounds);
+  if (result) {
+    console.log(`\nCongratulations, ${userName}!`);
+  } else {
+    console.log(`Let's try again, ${userName}!\n`);
+  }
 };
 export default makeGame;
