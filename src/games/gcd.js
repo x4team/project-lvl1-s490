@@ -2,10 +2,8 @@ import makeGame from '..';
 import getRandomInt from '../utils';
 
 const getGCD = (a, b) => {
-  if (!b) {
-    return a;
-  }
-  return getGCD(b, a % b);
+  const result = (!b) ? a : getGCD(b, a % b);
+  return result;
 };
 const gameDescription = 'Brain-gcd: Find the greatest common divisor of given numbers.';
 const genGCDData = () => {

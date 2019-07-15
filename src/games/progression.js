@@ -2,12 +2,12 @@ import makeGame from '..';
 import getRandomInt from '../utils';
 
 const genProgression = (start, length, step, index) => {
-  let arr = [];
+  const arr = [];
   for (let counter = 0; counter <= length; counter += 1) {
     if (counter === index) {
-      arr = arr.concat(['..']);
+      arr.push(['..']);
     } else {
-      arr = arr.concat([start + step * counter]);
+      arr.push([start + step * counter]);
     }
   }
   return arr;
@@ -17,11 +17,11 @@ const length = 10;
 
 const genProgressionData = () => {
   const startElement = getRandomInt(1, 100);
-  const stepProgression = getRandomInt(1, 20);
+  const progressionStep = getRandomInt(1, 20);
   const hiddenElementIndex = getRandomInt(0, length);
-  const progression = genProgression(startElement, length, stepProgression, hiddenElementIndex);
+  const progression = genProgression(startElement, length, progressionStep, hiddenElementIndex);
 
-  const answer = String(startElement + stepProgression * hiddenElementIndex);
+  const answer = String(startElement + progressionStep * hiddenElementIndex);
   const question = progression.join(' ');
   return [answer, question];
 };
